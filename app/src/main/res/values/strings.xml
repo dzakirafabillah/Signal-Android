@@ -2192,6 +2192,9 @@
     <string name="arrays__large">Large</string>
     <string name="arrays__extra_large">Extra large</string>
 
+    <string name="arrays__time_received">Time received</string>
+    <string name="arrays__unread">Unread</string>
+
     <string name="arrays__default">Default</string>
     <string name="arrays__high">High</string>
     <string name="arrays__max">Max</string>
@@ -2348,6 +2351,7 @@
     <string name="preferences_chats__show_invitation_prompts">Show invitation prompts</string>
     <string name="preferences_chats__display_invitation_prompts_for_contacts_without_signal">Display invitation prompts for contacts without Signal</string>
     <string name="preferences_chats__message_text_size">Message font size</string>
+    <string name="preferences_chats__chat_sort_by">Sort Chats</string>
     <string name="preferences_events__contact_joined_signal">Contact joined Signal</string>
     <string name="preferences_notifications__priority">Priority</string>
     <string name="preferences_communication__category_sealed_sender">Sealed Sender</string>
@@ -2617,6 +2621,7 @@
     <!-- conversation_list -->
     <string name="conversation_list_settings_shortcut">Settings shortcut</string>
     <string name="conversation_list_search_description">Search</string>
+    <string name="conversation_list__unread">Unread</string>
     <string name="conversation_list__pinned">Pinned</string>
     <string name="conversation_list__chats">Chats</string>
     <string name="conversation_list__you_can_only_pin_up_to_d_chats">You can only pin up to %1$d chats</string>
@@ -2667,7 +2672,6 @@
     <string name="text_secure_normal__menu_clear_passphrase">Lock</string>
     <string name="text_secure_normal__mark_all_as_read">Mark all read</string>
     <string name="text_secure_normal__invite_friends">Invite friends</string>
-    <string name="text_secure_normal__sort_chats">Sort chats</string>
 
     <!-- verify_display_fragment -->
     <string name="verify_display_fragment_context_menu__copy_to_clipboard">Copy to clipboard</string>

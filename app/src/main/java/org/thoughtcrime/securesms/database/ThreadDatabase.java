@@ -697,15 +697,20 @@ public class ThreadDatabase extends Database {
     String         where       = ARCHIVED + " = 0 AND " + MESSAGE_COUNT + " != 0 AND " + pinnedWhere;
 
     final String query;
-
+    
     if (pinned) {
       query = createQuery(where, PINNED + " ASC", offset, limit);
     } else {
-      query = createQuery(where, offset, limit, false);
+      boolean sortByUnread = TextSecurePreferences.getChatSortBy(context) == 2;
+      if(sortByUnread){
+        query = createQuery(where, offset, limit, false, true);
+      }else{
+        query = createQuery(where, offset, limit, false);
+      }
     }
 
     Cursor cursor = db.rawQuery(query, new String[]{});
-
+      
     return cursor;
   }
 
@@ -714,7 +719,7 @@ public class ThreadDatabase extends Database {
     String         query  = createQuery(ARCHIVED + " = ? AND " + MESSAGE_COUNT + " != 0", offset, limit, false);
     Cursor         cursor = db.rawQuery(query, new String[]{archived});
 
-    return cursor;
+    return cursor;  
   }
 
   public int getArchivedConversationListCount() {
@@ -1460,6 +1465,22 @@ public class ThreadDatabase extends Database {
 
   private @NonNull String createQuery(@NonNull String where, long offset, long limit, boolean preferPinned) {
     String orderBy    = (preferPinned ? TABLE_NAME + "." + PINNED + " DESC, " : "") + TABLE_NAME + "." + DATE + " DESC";
+
+    return createQuery(where, orderBy, offset, limit);
+  }
+
+  private @NonNull String createQuery(@NonNull String where, long offset, long limit, boolean preferPinned, boolean preferUnread) {
+    String orderBy = "";
+    
+    if(preferPinned){
+      orderBy =  TABLE_NAME + "." + PINNED + " DESC, ";
+    }
+
+    if(preferUnread){
+      orderBy = orderBy + TABLE_NAME + "." + UNREAD_COUNT + " DESC, ";
+    }
+
+    orderBy = orderBy + TABLE_NAME + "." + DATE + " DESC";
 
     return createQuery(where, orderBy, offset, limit);
   }

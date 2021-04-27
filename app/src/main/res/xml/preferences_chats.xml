@@ -12,6 +12,14 @@
                 android:defaultValue="16">
         </org.thoughtcrime.securesms.preferences.widgets.SignalListPreference>
 
+        <org.thoughtcrime.securesms.preferences.widgets.SignalListPreference
+                android:key="pref_message_chat_sort_by"
+                android:title="@string/preferences_chats__chat_sort_by"
+                android:entries="@array/pref_chat_sort_by_entries"
+                android:entryValues="@array/pref_chat_sort_by_values"
+                android:defaultValue="1">
+        </org.thoughtcrime.securesms.preferences.widgets.SignalListPreference>
+
         <org.thoughtcrime.securesms.components.SwitchPreferenceCompat
                 android:defaultValue="true"
                 android:key="pref_show_invite_reminder"

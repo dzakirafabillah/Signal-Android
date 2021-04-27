@@ -342,6 +342,16 @@
         <item>30</item>
     </string-array>
 
+    <string-array name="pref_chat_sort_by_entries">
+        <item>@string/arrays__time_received</item>
+        <item>@string/arrays__unread</item>
+    </string-array>
+
+    <string-array name="pref_chat_sort_by_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <string-array name="pref_notification_priority_entries">
         <item>@string/arrays__default</item>
         <item>@string/arrays__high</item>
